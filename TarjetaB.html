@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guatapé</title>
+    <!-- Enlace a Bootstrap CSS para estilizar con clases prediseñadas -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="TarjetaB.css">
+</head>
+<body>
+    <!-- Contenedor del efecto de giro -->
+    <div class="contenedor-giro" id="tarjetaGiro">
+        <div class="girador">
+            <!-- Cara frontal -->
+            <div class="frente">
+                <div class="tarjeta text-center shadow-lg"> <!-- "tarjeta" crea una tarjeta, "text-center" centra el texto, "shadow-lg" agrega sombra -->
+                    <img src="descarga.jpeg" class="tarjeta-img-top" alt="Paisaje de Guatapé"> <!-- "tarjeta-img-top" ajusta la imagen en la parte superior -->
+                    <div class="tarjeta-body"> <!-- "tarjeta-body" contiene el contenido de la tarjeta -->
+                        <h1 class="tarjeta-title">GUATAPÉ</h1> <!-- "tarjeta-title" estiliza el título -->
+                        <p class="tarjeta-text">Guatapé es un pintoresco pueblo colombiano conocido por sus coloridas fachadas y la impresionante Piedra del Peñol.</p>
+                        <button class="btn btn-primary" onclick="girarTarjeta()">Info Adicional</button> <!-- "btn" es un botón, "btn-primary" lo estiliza en azul -->
+                    </div>
+                </div>
+            </div>
+            <!-- Cara trasera -->
+            <div class="dorso">
+                <div class="tarjeta text-center shadow-lg p-3"> <!-- "p-3" agrega padding (espaciado interno) -->
+                    <div class="row"> <!-- "row" crea una fila para organizar elementos en columnas -->
+                        <!-- Sección de la ubicacion -->
+                        <div class="col-md-6"> <!-- "col-md-6" divide en 2 columnas en dispositivos medianos o más grandes -->
+                            <div class="tarjeta mb-3"> <!-- "mb-3" agrega margen en la parte inferior -->
+                                <h2 class="tarjeta-header">Ubicación</h2> <!-- "tarjeta-header" es el encabezado de la tarjeta -->
+                                <div class="tarjeta-body text-center">
+                                    <!-- Mapa de Google incrustado -->
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.493782497378!2d-75.16328591410362!3d6.23114809052641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e441d2972edf1bb%3A0xc8e9c49c096f7adc!2sGuatape%2C%20Guatap%C3%A9%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1740695032836!5m2!1ses!2sco" 
+                                    width="100%" height="240" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                    <p>Antioquia, Colombia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Sección del clima -->
+                        <div class="col-md-6"> 
+                            <div class="tarjeta mb-3">
+                                <h2 class="tarjeta-header">Clima</h2>
+                                <div class="tarjeta-body text-center">
+                                    <img src="clima.jpeg" class="img-fluid" alt="Clima de Guatapé"> <!-- "img-fluid" hace que la imagen sea responsive -->
+                                    <p>Templado, 18°C promedio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sección de actividades -->
+                    <div class="tarjeta mb-3">
+                        <h2 class="tarjeta-header">Actividades</h2>
+                        <div class="tarjeta-body text-center">
+                            <div class="row text-center">
+                                <div class="col-3 actividad">
+                                  <img src="ceramica.jpeg" alt="Cerámica">
+                                  <div class="texto-hover">Arte en Cerámica</div>
+                                </div>
+                                <div class="col-3 actividad">
+                                  <img src="sombrillas.jpeg" alt="Sombrillas">
+                                  <div class="texto-hover">Caminata</div>
+                                </div>
+                                <div class="col-3 actividad">
+                                  <img src="piedra.jpeg" alt="Piedra del Peñol">
+                                  <div class="texto-hover">Piedra del Peñol</div>
+                                </div>
+                                <div class="col-3 actividad">
+                                  <img src="lancha.jpeg" alt="Paseo en bote">
+                                  <div class="texto-hover">Paseo en bote</div>
+                                </div>
+                            </div>
+                        </div>      
+                    </div>
+                    <button class="btn btn-secondary" onclick="girarTarjeta()">Volver</button> <!-- "btn-secondary" lo estiliza en gris -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enlace a Bootstrap JS para funcionalidades interactivas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function girarTarjeta() {
+            document.getElementById("tarjetaGiro").classList.toggle("girado"); // Alterna la clase para girar la tarjeta
+        }
+    </script>
+</body>
+</html>

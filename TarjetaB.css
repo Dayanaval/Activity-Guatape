@@ -1,0 +1,108 @@
+/* Contenedor para el efecto de giro */
+.contenedor-giro {
+    perspective: 1000px; /* Da profundidad al efecto 3D */
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/*CARA FRONTAL*/
+.frente {
+    z-index: 2; /* Asegura que la cara frontal esté por encima */ 
+}
+.frente .tarjeta{ /*estilo del frente de la tarjeta*/
+    background-color: rgb(158, 248, 229);
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding-bottom: 10px;
+}
+.tarjeta-img-top{ /*estilo de la imagen*/
+    max-width: 800px;
+    height: 450px;
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.tarjeta-body h1{/*estilo del titulo*/
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tarjeta-body p{/*estilo del texto*/
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 70px 0;
+}
+
+/*Estilo comun para ambas caras*/
+.frente, .dorso { 
+    width: 100%;
+    backface-visibility: hidden; /* Oculta el lado trasero cuando no está visible */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*CARA TRASERA*/
+.dorso {
+    transform: rotateY(180deg); /* La parte trasera empieza girada */
+}
+.dorso .tarjeta{ /*estilo de la parte trasera*/
+    background-color: rgb(210, 230, 225);
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+.tarjeta-header{ /*estilo de los subtitulos*/
+    background-color: #000000;
+    padding: 4px 0;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tarjeta-body p{/*estilo de las frases*/
+    font-size: 15px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.actividad {/*estilo para la estructura de las imagenes*/
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .actividad img { /*estilo de las imagenes*/
+    display: block;
+    width: 100%;
+    height: 150px;
+  }
+  
+  .texto-hover {/*estilo del texto que aparece al pasar el mouse*/ 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(35, 65, 61, 0.699); /* Fondo oscuro con opacidad */
+    color: white;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+    
+  .actividad:hover .texto-hover { /*para ver el texto*/
+    opacity: 1; 
+}
+
+/*Efecto del giro al hacer clic*/
+.girador {
+    transition: transform 0.6s; /* Transición suave al girar */
+    transform-style: preserve-3d; /* Mantiene la estructura en 3D */
+    position: relative;
+}
+.contenedor-giro.girado .girador { /*cuando se aplica la clase girado*/
+    transform: rotateY(180deg); /* Gira la tarjeta */
+}
